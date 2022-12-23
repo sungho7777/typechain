@@ -2,7 +2,7 @@
     "include": ["src"],
     "compilerOptions": {
         "outDir": "build",
-        "target": "ES3",
-        "moduleResolution": "node"
+        "target": "ES6",
+        "lib": ["ES6", "DOM"]
     }
 }
