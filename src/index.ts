@@ -6,6 +6,7 @@ interface BlockShape {
     heigth: number;
     data: string;
 }
+
 class Block implements BlockShape{
     public hash: string;
     constructor(
@@ -16,6 +17,7 @@ class Block implements BlockShape{
         this.hash = Block.calculateHash(prevHash, heigth, data);
     }
     static calculateHash(prevHash: string, height: number, data: string){
-        const toHash = `${prevHash}${height}${data}`
+        const toHash = `${prevHash}${height}${data}`;
+        return crypto.createHash("cha256").update(toHash).digest("hex");
     }
 }
